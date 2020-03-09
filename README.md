@@ -9,7 +9,7 @@
 
 关键是找到状态转移方程。
 
-  * [num55](https://leetcode-cn.com/problems/jump-game/): 中等难度题，比较容易想到动态规划，但是时间很慢，复杂度为'$O(n^2)$'，python超时，但c++可通过。
+  * [num55](https://leetcode-cn.com/problems/jump-game/): 中等难度题，比较容易想到动态规划，但是时间很慢，复杂度为$O(n^2)$，python超时，但c++可通过。
 
 ## 栈
 先进后出的特点，常见题型为括号匹配、文件路径
