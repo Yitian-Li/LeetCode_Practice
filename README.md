@@ -50,11 +50,11 @@ def backtrack(路径, 选择列表):
 
 
 
-  * [num39](https://leetcode-cn.com/problems/combination-sum/）
+  * [num39](https://leetcode-cn.com/problems/combination-sum/)
   中等题。需要从一个数组`candidates`中挑选出任意的数字满足和为`target`，数字可以重复使用。
   看了题解思路后，仍然无法写出代码来。看了题解代码后，虽然好像搞懂了，但是仍然不会写。需要多练习。
   
-  * [num40](https://leetcode-cn.com/problems/combination-sum-ii/）
+  * [num40](https://leetcode-cn.com/problems/combination-sum-ii/)
   中等题，39题的变体，数字不能重复使用。故在递归调用的时候，需要将`index`改为`index+1`, 
   另外需要多写一行判断避免重复（相同的数字，交换顺序的情况）
   
