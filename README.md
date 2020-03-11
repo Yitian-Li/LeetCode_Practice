@@ -33,7 +33,7 @@
 
 这种类型的题，都会有一个全局变量`path`存储已经选择的元素，并用全局变量`result`存储符合条件的`path`。
 
-如果题目要求解不能重复，通常可以用排序来解决。
+回溯算法模板：
 
 ```
 def backtrack(路径, 选择列表):
@@ -45,6 +45,8 @@ def backtrack(路径, 选择列表):
 		backtrack(路径, 选择列表)
 		撤销选择(出栈)
 ```
+
+如果题目要求解不能重复，通常可以用排序来解决。
 
   *[num39]（https://leetcode-cn.com/problems/combination-sum/）
   中等题。需要从一个数组`candidates`中挑选出任意的数字满足和为`target`，数字可以重复使用。
