@@ -17,10 +17,10 @@
 
     总结：关键是找到状态转移方程。
 
-    * [num55](https://leetcode-cn.com/problems/jump-game/) 
+  * [num55](https://leetcode-cn.com/problems/jump-game/) 
 		中等难度题，比较容易想到动态规划，但是时间很慢，复杂度为`$O(n^2)$`，python超时，但c++可通过。
 		
-    * [num42](https://leetcode-cn.com/problems/trapping-rain-water/)
+  * [num42](https://leetcode-cn.com/problems/trapping-rain-water/)
 		困难题，可以利用动态规划算法也可以利用双指针。
 		主要思想是：第i个位置存储的雨水必定是被左边、右边的两个最高的柱子中的短板限定的。
 		首先可以考虑暴力法、按列求解，即对于每个位置，都考虑这个位置可以存储多少水。
@@ -29,18 +29,18 @@
 
   ## 贪心算法
 	
-    * [num121](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+  * [num121](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
 		简单题，第一次没理解。先计算MaxProfit，再维护MinPrice，一次遍历即可以得到MaxProfit
 		  
-    * [num55](https://leetcode-cn.com/problems/jump-game/)
+  * [num55](https://leetcode-cn.com/problems/jump-game/)
 		使用题解中提供的方法，贪心算法。直接挨个跳，判断能否跳到第i个，如果可以跳到第i个，就可以从第i个继续跳，直至false.
 		  
-    * [num1013](https://leetcode-cn.com/problems/partition-array-into-three-parts-with-equal-sum/)
+  * [num1013](https://leetcode-cn.com/problems/partition-array-into-three-parts-with-equal-sum/)
 		简单题，但是并不顺利。此题的解题要点是：将数组分为三个和相等的部分其实就是每个部分为sum/3。除此之外，
 		写的代码不够简洁，还多次出现异常，判断语句的条件还需要多琢磨。
 		
   ## 双指针
-    * [num42](https://leetcode-cn.com/problems/trapping-rain-water/)
+  * [num42](https://leetcode-cn.com/problems/trapping-rain-water/)
 		困难题，可以利用动态规划算法也可以利用双指针。考虑动态规划算法，我们其实可以从左边、右边同时、双向遍历数组。
 		主要思想是：第i个位置存储的雨水必定是被左边、右边的两个最高的柱子中的短板限定的。
 	  
