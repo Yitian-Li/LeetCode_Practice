@@ -6,6 +6,9 @@
 本人是研二菜鸟一枚，这是我的[LeetCode](https://leetcode-cn.com/ "悬停显示")练习记录，记录了我的解题代码和解题思路总结，将不断更新。
 希望自己都能拿到理想中的offer。
 
+有用的链接：
+  * [牛客网算法工程师面试](https://m.nowcoder.com/tutorial/95/menu)
+
 本文将：
 
 1.动态规划、贪心算法、回溯算法相关的题等归为`算法`
@@ -102,4 +105,25 @@ def backtrack(路径, 选择列表):
 ####  数组
 * [num34](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 		给出一个升序数组，通过二分查找算法，确定`target`的位置，比较简单，但是要注意left和right的判断语句
+		
+####  树
+```
+总结：
+	dfs：通过递归调用的方法容易完成。
+	bfs：维护一个队列的方法，队列存储某一层的所有节点
+	前序、中序、后序遍历：先遍历根节点还是、中遍历根节点、后遍历根节点
+```
+* [num257](https://leetcode-cn.com/problems/binary-tree-paths/)
+		很久没做过树的相关题目了，做一个简单题回忆下如何遍历树。
+		
+* [num199](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
+		右视图问题。
+		比较容易想到的是广度优先搜索算法，用一个数组存储某一层最右边的元素。
+		也可以用深度优先搜索算法，递归调用的时候加入一个参数depth，在递归调用时不断维护当前的深度，同时用一个数组存储最右边的元素。
+		
+* [num110](https://leetcode-cn.com/problems/balanced-binary-tree/)
+		平衡树问题。先判断子树是否平衡，再判断当前结点是否平衡，可以节省时间。
+		即采用深度优先搜索，通过左子树是否平衡、右子树是否平衡、左子树和右子树的高度差判断是否为平衡树。
+		另外发现，在python中，在函数A中再定义函数B，即使用嵌套函数，会导致变慢。
+
 	
