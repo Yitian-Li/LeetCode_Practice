@@ -56,6 +56,10 @@
 		
   * [num75](https://leetcode-cn.com/problems/sort-colors/)
   		此题只有三种颜色，因此可以用双指针的方法，把0放在左边，2放在右边，剩下的1自然也就排好序了。
+		
+  * [num18](https://leetcode-cn.com/problems/4sum/)
+		四数之和问题，和[num454](https://leetcode-cn.com/problems/4sum-ii/)类似。
+		这里使用双指针，提前排序数组，可以减少时间复杂度。4层循环可变为3层循环。
 	  
 #### 回溯算法
 ```
@@ -125,5 +129,23 @@ def backtrack(路径, 选择列表):
 		平衡树问题。先判断子树是否平衡，再判断当前结点是否平衡，可以节省时间。
 		即采用深度优先搜索，通过左子树是否平衡、右子树是否平衡、左子树和右子树的高度差判断是否为平衡树。
 		另外发现，在python中，在函数A中再定义函数B，即使用嵌套函数，会导致变慢。
+		
+####  哈希表
+```
+总结：
+	python中的字典，底层数据结构就是哈希表。其实按照“键-值”对存储的，都可以当作哈希表处理。
+	通过维护更新哈希表，从哈希表中检索，可以减少时间复杂度。
+	可以用collections.Counter()快速得到一个计数字典
+```
+* [num1160](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/)
+		用collections.Counter()得到chars和word的字母计数，如果word的计数小于chars则可以。
 
+* [num454](https://leetcode-cn.com/problems/4sum-ii/)
+		四数之和，和[num18](https://leetcode-cn.com/problems/4sum/)类似，
+		通过将四数之和划分为两个两数之和，可以大大节省时间复杂度，O(n^4)变为O(n^2)。
+		
+* [num299](https://leetcode-cn.com/problems/bulls-and-cows/)
+		同样是用collections.Counter()得到计数字典，如何计算bulls和cows有点小技巧。
+		
+		
 	
