@@ -133,7 +133,7 @@ def backtrack(路径, 选择列表):
 		
 * [num105](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
 * [num106](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
-* [num106](https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/)
+* [num1008](https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/)
 		根据前序、中序、后序构建二叉树，我都使用了递归的方法，比较统一也比较好理解。
 		```
 		1.从先序或者后序中先找到root，并pop
@@ -151,7 +151,7 @@ def backtrack(路径, 选择列表):
 	特别需要注意堆实际可以用数组来构建，因为它是一个二叉完全树。
 	给定index，其父节点为(index-1)//2，左右孩子结点为index*2+1、index*2+2
 ```
-* [num215]https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+* [num215](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
 * [num703](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/)
 		都是通过构建最小堆，寻找第K大的数
 ####  哈希表
