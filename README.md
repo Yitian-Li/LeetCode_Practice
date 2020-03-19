@@ -131,6 +131,29 @@ def backtrack(路径, 选择列表):
 		即采用深度优先搜索，通过左子树是否平衡、右子树是否平衡、左子树和右子树的高度差判断是否为平衡树。
 		另外发现，在python中，在函数A中再定义函数B，即使用嵌套函数，会导致变慢。
 		
+* [num105](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+* [num106](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+* [num106](https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/)
+		根据前序、中序、后序构建二叉树，我都使用了递归的方法，比较统一也比较好理解。
+		```
+		1.从先序或者后序中先找到root，并pop
+		2.用根节点把中序划分为左、右子树
+		3.递归调用，创建root.left和root.right
+		```
+		
+####  堆
+```
+总结：
+	堆常常用来寻找数组中:
+	1.第K大的数:使用最小堆记录前K个最大的数，堆顶即为前K个最大的数中最小的那个 
+	2.第K小的数:反之
+	堆通过上浮(插入元素)、下沉操作(删除操作)来维护（实际上是不断交换的过程）
+	特别需要注意堆实际可以用数组来构建，因为它是一个二叉完全树。
+	给定index，其父节点为(index-1)//2，左右孩子结点为index*2+1、index*2+2
+```
+* [num215]https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+* [num703](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/)
+		都是通过构建最小堆，寻找第K大的数
 ####  哈希表
 ```
 总结：
