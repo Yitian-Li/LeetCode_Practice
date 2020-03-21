@@ -18,6 +18,12 @@
 
 # 算法
 
+#### 二分查找
+```
+总结：对已排好序的数组，二分查找会更快
+```
+  * [num378](https://leetcode-cn.com/problems/jump-game/) 升序的矩阵，查找第k小，也可以用堆或者优先队列实现
+
 #### 动态规划
 
 ```
@@ -45,6 +51,9 @@
 		  
   * [num55](https://leetcode-cn.com/problems/jump-game/)
 		使用题解中提供的方法，贪心算法。直接挨个跳，判断能否跳到第i个，如果可以跳到第i个，就可以从第i个继续跳，直至false.
+		
+  * [num621](https://leetcode-cn.com/problems/task-scheduler/)
+		可以用桶的思想来理解。首先调度次数最多的任务，然后调度第二多的。
 		  
   * [num1013](https://leetcode-cn.com/problems/partition-array-into-three-parts-with-equal-sum/)
 		简单题，但是并不顺利。此题的解题要点是：将数组分为三个和相等的部分其实就是每个部分为sum/3。除此之外，
@@ -90,6 +99,10 @@ def backtrack(路径, 选择列表):
   
 # 数据结构
 
+####  数组
+* [num34](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+		给出一个升序数组，通过二分查找算法，确定`target`的位置，比较简单，但是要注意left和right的判断语句
+
 #### 栈
 ```
 总结：先进后出的特点，常见题型为括号匹配、文件路径。
@@ -107,9 +120,15 @@ def backtrack(路径, 选择列表):
 * [num86](https://leetcode-cn.com/problems/partition-list/submissions/)
 		中等难度题，感觉较为简单。用两个链表分别存小于和大于的结点，再合并就行。
 	  
-####  数组
-* [num34](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
-		给出一个升序数组，通过二分查找算法，确定`target`的位置，比较简单，但是要注意left和right的判断语句
+
+		
+####  队列
+* [num641](https://leetcode-cn.com/problems/design-circular-deque/)
+		实现一个双向循环队列。
+		
+* [num933](https://leetcode-cn.com/problems/number-of-recent-calls/)
+		队首队尾双指针，即可实现。
+
 		
 ####  树
 ```
@@ -131,9 +150,9 @@ def backtrack(路径, 选择列表):
 		即采用深度优先搜索，通过左子树是否平衡、右子树是否平衡、左子树和右子树的高度差判断是否为平衡树。
 		另外发现，在python中，在函数A中再定义函数B，即使用嵌套函数，会导致变慢。
 		
-* [num105](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
-[num106](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
-[num1008](https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/)
+* [num105](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)，
+[num106](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)，
+[num1008](https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/)，
 		根据前序、中序、后序构建二叉树，我都使用了递归的方法，比较统一也比较好理解。
 		```
 		1.从先序或者后序中先找到root，并pop
@@ -163,7 +182,7 @@ def backtrack(路径, 选择列表):
 * [num1160](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/)
 		用collections.Counter()得到chars和word的字母计数，如果word的计数小于chars则可以。
 
-* [num454](https://leetcode-cn.com/problems/4sum-ii/)
+* [num454](https://leetcode-cn.com/problems/4sum-ii/)，
 		四数之和，和[num18](https://leetcode-cn.com/problems/4sum/)类似，
 		通过将四数之和划分为两个两数之和，可以大大节省时间复杂度，O(n^4)变为O(n^2)。
 		
