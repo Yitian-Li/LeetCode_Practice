@@ -96,6 +96,11 @@ def backtrack(路径, 选择列表):
 * [num40](https://leetcode-cn.com/problems/combination-sum-ii/)
 		中等题，39题的变体，数字不能重复使用。故在递归调用的时候，需要将`index`改为`index+1`, 
 		另外需要多写一行判断避免重复（相同的数字，交换顺序的情况）
+
+#### DFS,BFS
+* [num365](https://leetcode-cn.com/problems/water-and-jug-problem/)
+		把所有可能的情况都依次入栈，逐个检查栈中的元素，如果符合条件则返回。此题有数学解法。
+
   
 # 数据结构
 
@@ -110,6 +115,7 @@ def backtrack(路径, 选择列表):
 		  
 * [num71](https://leetcode-cn.com/problems/simplify-path/)
 		中等题，感觉较为简单。利用栈来简化绝对路径。在python中利用list可以轻松实现栈结构。
+		
 	  
 #### 链表
 * [num61](https://leetcode-cn.com/problems/rotate-list/)
@@ -189,5 +195,14 @@ def backtrack(路径, 选择列表):
 * [num299](https://leetcode-cn.com/problems/bulls-and-cows/)
 		同样是用collections.Counter()得到计数字典，如何计算bulls和cows有点小技巧。
 		
+# 数学
+* [num365](https://leetcode-cn.com/problems/water-and-jug-problem/)
+		通过分析发现，其实每次对水壶操作，水壶变化的总量都可以用公式表达出来，然后转为为数学公式求解。
+		
+* [num650](https://leetcode-cn.com/problems/2-keys-keyboard/submissions/)
+		复制拷贝问题。其实可以把n个字符分解为i*j个字符。
+
+* [num1227](https://leetcode-cn.com/problems/airplane-seat-assignment-probability/)
+		飞机抢座问题，算坐对的概率，我是通过算坐错的概率求解的。
 		
 	
