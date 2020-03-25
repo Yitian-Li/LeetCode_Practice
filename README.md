@@ -23,6 +23,7 @@
 总结：对已排好序的数组，二分查找会更快
 ```
   * [num378](https://leetcode-cn.com/problems/jump-game/) 升序的矩阵，查找第k小，也可以用堆或者优先队列实现
+  * [num35](https://leetcode-cn.com/problems/search-insert-position/)查找插入位置
 
 #### 动态规划
 
@@ -96,6 +97,19 @@ def backtrack(路径, 选择列表):
 * [num40](https://leetcode-cn.com/problems/combination-sum-ii/)
 		中等题，39题的变体，数字不能重复使用。故在递归调用的时候，需要将`index`改为`index+1`, 
 		另外需要多写一行判断避免重复（相同的数字，交换顺序的情况）
+		
+* [num37](https://leetcode-cn.com/problems/sudoku-solver/)
+		解数独，主要用到了回溯的思想，挨个尝试。
+		
+* [num46](https://leetcode-cn.com/problems/permutations/)
+		回溯法求全排列。
+
+* [num78](https://leetcode-cn.com/problems/subsets/)
+		回溯求子集。
+		
+* [num90](https://leetcode-cn.com/problems/subsets-ii/submissions/)
+		回溯求子集。对于选择列表有重复的元素的情况，用排序即可去重。
+		
 
 #### DFS,BFS
 * [num365](https://leetcode-cn.com/problems/water-and-jug-problem/)
@@ -125,6 +139,9 @@ def backtrack(路径, 选择列表):
 	  
 * [num86](https://leetcode-cn.com/problems/partition-list/submissions/)
 		中等难度题，感觉较为简单。用两个链表分别存小于和大于的结点，再合并就行。
+		
+* [num876](https://leetcode-cn.com/problems/middle-of-the-linked-list/)
+		简单题。
 	  
 
 		
@@ -196,6 +213,12 @@ def backtrack(路径, 选择列表):
 		同样是用collections.Counter()得到计数字典，如何计算bulls和cows有点小技巧。
 		
 # 数学
+* [num36](https://leetcode-cn.com/problems/valid-sudoku/)
+		检查当前数独是否有效。
+
+* [num37](https://leetcode-cn.com/problems/sudoku-solver/)
+		解数独，主要用到了回溯的思想，挨个尝试。
+
 * [num365](https://leetcode-cn.com/problems/water-and-jug-problem/)
 		通过分析发现，其实每次对水壶操作，水壶变化的总量都可以用公式表达出来，然后转为为数学公式求解。
 		
