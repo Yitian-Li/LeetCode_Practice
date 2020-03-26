@@ -18,12 +18,23 @@
 
 # 算法
 
+#### 排序
+	
+* [num56](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+		合并区间，先对区间排序，然后判断是否有交集即可
+
 #### 二分查找
 ```
 总结：对已排好序的数组，二分查找会更快
 ```
-  * [num378](https://leetcode-cn.com/problems/jump-game/) 升序的矩阵，查找第k小，也可以用堆或者优先队列实现
-  * [num35](https://leetcode-cn.com/problems/search-insert-position/)查找插入位置
+  * [num378](https://leetcode-cn.com/problems/jump-game/) 
+		升序的矩阵，查找第k小，也可以用堆或者优先队列实现
+		
+  * [num35](https://leetcode-cn.com/problems/search-insert-position/)
+		查找插入位置
+  
+  * [num34](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+		给出一个升序数组，通过二分查找算法，确定`target`的位置，比较简单，但是要注意left和right的判断语句
 
 #### 动态规划
 
@@ -45,6 +56,19 @@
 		在实现的时候发现这样会导致很多冗余的计算，因为我们可以用left_max和right_max数组来存储两次扫描的最高高度，
 		最后雨水总量就可以用这个数组计算。
 
+		
+  * [num53](https://leetcode-cn.com/problems/maximum-subarray/)
+		简单题，很容易想到动态规划，和贪心算法也比较像。
+		
+  * [num62](https://leetcode-cn.com/problems/unique-paths/)
+		求路径总数。可以用排列组合计算，也可以用动态规划。
+		
+  * [num64](https://leetcode-cn.com/problems/minimum-path-sum/)
+		动态规划求最小路径。
+
+  * [num72](https://leetcode-cn.com/problems/edit-distance/)
+		动态规划求编辑距离。关键是需要理解插入、删除、替换的转移方程。
+		
 ####  贪心算法
 	
   * [num121](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
@@ -71,6 +95,10 @@
   * [num18](https://leetcode-cn.com/problems/4sum/)
 		四数之和问题，和[num454](https://leetcode-cn.com/problems/4sum-ii/)类似。
 		这里使用双指针，提前排序数组，可以减少时间复杂度。4层循环可变为3层循环。
+		
+  * [num76](https://leetcode-cn.com/problems/minimum-window-substring/)
+		双指针定义滑动窗口，来求最小覆盖子串。思路比较好想，但是滑动窗口的判断还需要多调试！
+	
 	  
 #### 回溯算法
 ```
@@ -117,10 +145,6 @@ def backtrack(路径, 选择列表):
 
   
 # 数据结构
-
-####  数组
-* [num34](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
-		给出一个升序数组，通过二分查找算法，确定`target`的位置，比较简单，但是要注意left和right的判断语句
 
 #### 栈
 ```
@@ -212,6 +236,9 @@ def backtrack(路径, 选择列表):
 * [num299](https://leetcode-cn.com/problems/bulls-and-cows/)
 		同样是用collections.Counter()得到计数字典，如何计算bulls和cows有点小技巧。
 		
+* [num49](https://leetcode-cn.com/problems/group-anagrams/)
+		`collections.defaultdict(list)`可以构建一个`key->list`的字典
+		
 # 数学
 * [num36](https://leetcode-cn.com/problems/valid-sudoku/)
 		检查当前数独是否有效。
@@ -228,4 +255,5 @@ def backtrack(路径, 选择列表):
 * [num1227](https://leetcode-cn.com/problems/airplane-seat-assignment-probability/)
 		飞机抢座问题，算坐对的概率，我是通过算坐错的概率求解的。
 		
-	
+  * [num62](https://leetcode-cn.com/problems/unique-paths/)
+		求路径的数量。可以用排列组合计算，也可以用动态规划。	
