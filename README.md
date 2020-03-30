@@ -69,6 +69,11 @@
   * [num72](https://leetcode-cn.com/problems/edit-distance/)
 		动态规划求编辑距离。关键是需要理解插入、删除、替换的转移方程。
 		
+  * [num96](https://leetcode-cn.com/problems/unique-binary-search-trees/)
+		比较巧妙的一道题，第一想法是分为左右子树递归，超时。
+		关键点在于递归左右子树的时候，其实种类数与数组无关，只与长度有关，
+		只需保存每个长度的种类数，就可以节省很多冗余计算。
+		
 ####  贪心算法
 	
   * [num121](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
@@ -135,6 +140,9 @@ def backtrack(路径, 选择列表):
 * [num78](https://leetcode-cn.com/problems/subsets/)
 		回溯求子集。
 		
+* [num79](https://leetcode-cn.com/problems/word-search/)
+		通过回溯、深度搜索来检测是否有满足条件的单词。
+		
 * [num90](https://leetcode-cn.com/problems/subsets-ii/submissions/)
 		回溯求子集。对于选择列表有重复的元素的情况，用排序即可去重。
 		
@@ -142,7 +150,12 @@ def backtrack(路径, 选择列表):
 #### DFS,BFS
 * [num365](https://leetcode-cn.com/problems/water-and-jug-problem/)
 		把所有可能的情况都依次入栈，逐个检查栈中的元素，如果符合条件则返回。此题有数学解法。
+		
+* [num101](https://leetcode-cn.com/problems/symmetric-tree/)
+		判断一个树是否对称，可以采用递归的方法。但是我觉得使用广度优先搜索，并判断是否回文会更快。
 
+* [num102](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/), [num104](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
+		简单的BFS
   
 # 数据结构
 
@@ -154,6 +167,15 @@ def backtrack(路径, 选择列表):
 * [num71](https://leetcode-cn.com/problems/simplify-path/)
 		中等题，感觉较为简单。利用栈来简化绝对路径。在python中利用list可以轻松实现栈结构。
 		
+* [num84](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
+		求最大矩形。单调栈，做完一头雾水，思路好像搞懂了但是代码写出来一直有case不通过
+		
+* [num85](https://leetcode-cn.com/problems/maximal-rectangle/)		
+		此题可转化为84题。需要再次看！
+		
+* [num94](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)	
+		利用栈的特性，压入左子树直至p为空，然后出栈（得到父节点），染后压入右子树。
+		出栈顺序刚好就是左-根-右
 	  
 #### 链表
 * [num61](https://leetcode-cn.com/problems/rotate-list/)
@@ -207,6 +229,12 @@ def backtrack(路径, 选择列表):
 		3.递归调用，创建root.left和root.right
 		```
 		
+* [num98](https://leetcode-cn.com/problems/validate-binary-search-tree/)
+		验证二叉搜索树。关键在于如何保存父节点的值（使用上界和下界，避免重复检验）
+		
+* [num114](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/)
+		把树变为链表。即把左子树插入到右子树上面。
+		
 ####  堆
 ```
 总结：
@@ -238,6 +266,10 @@ def backtrack(路径, 选择列表):
 		
 * [num49](https://leetcode-cn.com/problems/group-anagrams/)
 		`collections.defaultdict(list)`可以构建一个`key->list`的字典
+		
+* [num128](https://leetcode-cn.com/problems/longest-consecutive-sequence/)
+		找连续的子序列。可以排序，时间复杂度为O(nlogn)。
+		也可以利用哈希表查找为O(1)的特性，存下所有数字，然后从哈希表中查询，可以达到O(n)的复杂度。
 		
 # 数学
 * [num36](https://leetcode-cn.com/problems/valid-sudoku/)
