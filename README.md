@@ -22,6 +22,9 @@
 	
 * [num56](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 		合并区间，先对区间排序，然后判断是否有交集即可
+		
+* [num148](https://leetcode-cn.com/problems/sort-list/)
+		链表的排序，使用归并排序（从上至下的递归法、从底向上的迭代法）
 
 #### 二分查找
 ```
@@ -73,6 +76,11 @@
 		比较巧妙的一道题，第一想法是分为左右子树递归，超时。
 		关键点在于递归左右子树的时候，其实种类数与数组无关，只与长度有关，
 		只需保存每个长度的种类数，就可以节省很多冗余计算。
+		
+  * [num139](https://leetcode-cn.com/problems/word-break/)
+		拆分字符串为单词。本来想直接用hash表线性遍历，但是发现字符串为"aaaaaaa"，
+		字典为["aaaa","aaa"]的时候会分为"aaa","aaa","a"而错误。改用递归又超时。
+		最后用动态规划dp[i]记录前i个字符能否分割。
 		
 ####  贪心算法
 	
@@ -271,6 +279,14 @@ def backtrack(路径, 选择列表):
 		找连续的子序列。可以排序，时间复杂度为O(nlogn)。
 		也可以利用哈希表查找为O(1)的特性，存下所有数字，然后从哈希表中查询，可以达到O(n)的复杂度。
 		
+* [num141](https://leetcode-cn.com/problems/linked-list-cycle/)
+		使用哈希表来存储链表结点，判断是否有环
+		
+* [num146](https://leetcode-cn.com/problems/lru-cache/)
+		字典是无序的，但可以通过`from collections import OrderedDict`构建一个有序字典。
+		OrderedDict除了普通dict有的特点外，还可以`d.move_to_end(key)`把某个key-value对移动到尾部，
+		`popitem(last=True)`删除并返回一个key-value对，`last=True`表示先进后出，`last=False`表示先进先出。
+		
 # 数学
 * [num36](https://leetcode-cn.com/problems/valid-sudoku/)
 		检查当前数独是否有效。
@@ -289,3 +305,17 @@ def backtrack(路径, 选择列表):
 		
   * [num62](https://leetcode-cn.com/problems/unique-paths/)
 		求路径的数量。可以用排列组合计算，也可以用动态规划。	
+		
+		
+# 骚操作
+* [num136](https://leetcode-cn.com/problems/single-number/)
+		使用异或运算符，可以使用O(1)的空间。
+```
+1.交换两个变量的值，却不需要引入第三个变量： a = a^b, b = a^b, a = a^b
+2.找出[a,a,b,c,b,a,c]中只出现奇数次的数： a^a^b^c^b^a^c = (a^a^a)^(b^b)^(c^c) = a
+3.更多：https://blog.csdn.net/qq_39705793/article/details/81237005
+```
+
+* [num141](https://leetcode-cn.com/problems/linked-list-cycle/)
+		利用两个指针，一快一慢，如果链表有环则必定快慢指针会相遇。（想象两个运动员跑步）
+		
