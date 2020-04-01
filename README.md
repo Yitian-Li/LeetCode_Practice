@@ -81,6 +81,13 @@
 		拆分字符串为单词。本来想直接用hash表线性遍历，但是发现字符串为"aaaaaaa"，
 		字典为["aaaa","aaa"]的时候会分为"aaa","aaa","a"而错误。改用递归又超时。
 		最后用动态规划dp[i]记录前i个字符能否分割。
+
+  * [num152](https://leetcode-cn.com/problems/maximum-product-subarray/)
+		找到一个子数组，使得乘积最大。这里主要要考虑正数和负数的情况。
+		由于负负得正，我们需要记录以index结尾的子数组的最小乘积（负数）以及最大的乘积
+		
+  * [num198](https://leetcode-cn.com/problems/house-robber/)
+		简单的动态规划。可以用两个变量节省空间。
 		
 ####  贪心算法
 	
@@ -164,6 +171,10 @@ def backtrack(路径, 选择列表):
 
 * [num102](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/), [num104](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 		简单的BFS
+		
+* [num200](https://leetcode-cn.com/problems/number-of-islands/)
+		看了题解后，发现我的思路比较类似于并查集？然而判断条件还是设置的不对。
+		然而我觉得并查集的做法也太慢了，还是DFS或者BFS吧。
   
 # 数据结构
 
@@ -261,6 +272,7 @@ def backtrack(路径, 选择列表):
 	python中的字典，底层数据结构就是哈希表。其实按照“键-值”对存储的，都可以当作哈希表处理。
 	通过维护更新哈希表，从哈希表中检索，可以减少时间复杂度。
 	可以用collections.Counter()快速得到一个计数字典
+	set()也是哈希表，和字典一样，时间复杂度为O(1)
 ```
 * [num1160](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/)
 		用collections.Counter()得到chars和word的字母计数，如果word的计数小于chars则可以。
@@ -287,6 +299,9 @@ def backtrack(路径, 选择列表):
 		OrderedDict除了普通dict有的特点外，还可以`d.move_to_end(key)`把某个key-value对移动到尾部，
 		`popitem(last=True)`删除并返回一个key-value对，`last=True`表示先进后出，`last=False`表示先进先出。
 		
+* [num160](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
+		使用哈希表查找O(1)的特点节约时间
+		
 # 数学
 * [num36](https://leetcode-cn.com/problems/valid-sudoku/)
 		检查当前数独是否有效。
@@ -310,12 +325,19 @@ def backtrack(路径, 选择列表):
 # 骚操作
 * [num136](https://leetcode-cn.com/problems/single-number/)
 		使用异或运算符，可以使用O(1)的空间。
-```
-1.交换两个变量的值，却不需要引入第三个变量： a = a^b, b = a^b, a = a^b
-2.找出[a,a,b,c,b,a,c]中只出现奇数次的数： a^a^b^c^b^a^c = (a^a^a)^(b^b)^(c^c) = a
-3.更多：https://blog.csdn.net/qq_39705793/article/details/81237005
-```
+		```
+		1.交换两个变量的值，却不需要引入第三个变量： a = a^b, b = a^b, a = a^b
+		2.找出[a,a,b,c,b,a,c]中只出现奇数次的数： a^a^b^c^b^a^c = (a^a^a)^(b^b)^(c^c) = a
+		3.更多：https://blog.csdn.net/qq_39705793/article/details/81237005
+		```
 
 * [num141](https://leetcode-cn.com/problems/linked-list-cycle/)
-		利用两个指针，一快一慢，如果链表有环则必定快慢指针会相遇。（想象两个运动员跑步）
+		双指针，一快一慢，如果链表有环则必定快慢指针会相遇。（想象两个运动员跑步）
+		
+* [num160](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
+		双指针法，详细看代码吧。总结是，第二次遍历的时候，一定是同步的。
+		
+* [num169](https://leetcode-cn.com/problems/majority-element/)
+		max函数除了`max(a,b)`取a，b的最大值，`max(arr)`取数组最大值，
+		还可以`max(arr, key= function)`的方法对`arr`的元素先`function`再比较。
 		
