@@ -53,10 +53,10 @@
 如何写好动态规划算法，关键是找到状态转移方程。
 ```
 
-  * [num55](https://leetcode-cn.com/problems/jump-game/) 
+* [num55](https://leetcode-cn.com/problems/jump-game/) 
 		中等难度题，比较容易想到动态规划，但是时间很慢，复杂度为`$O(n^2)$`，python超时，但c++可通过。
 		
-  * [num42](https://leetcode-cn.com/problems/trapping-rain-water/)
+* [num42](https://leetcode-cn.com/problems/trapping-rain-water/)
 		困难题，可以利用动态规划算法也可以利用双指针。
 		主要思想是：第i个位置存储的雨水必定是被左边、右边的两个最高的柱子中的短板限定的。
 		首先可以考虑暴力法、按列求解，即对于每个位置，都考虑这个位置可以存储多少水。
@@ -64,72 +64,72 @@
 		最后雨水总量就可以用这个数组计算。
 
 		
-  * [num53](https://leetcode-cn.com/problems/maximum-subarray/)
+* [num53](https://leetcode-cn.com/problems/maximum-subarray/)
 		简单题，很容易想到动态规划，和贪心算法也比较像。
 		
-  * [num62](https://leetcode-cn.com/problems/unique-paths/)
+* [num62](https://leetcode-cn.com/problems/unique-paths/)
 		求路径总数。可以用排列组合计算，也可以用动态规划。
 		
-  * [num64](https://leetcode-cn.com/problems/minimum-path-sum/)
+* [num64](https://leetcode-cn.com/problems/minimum-path-sum/)
 		动态规划求最小路径。
 
-  * [num72](https://leetcode-cn.com/problems/edit-distance/)
+* [num72](https://leetcode-cn.com/problems/edit-distance/)
 		动态规划求编辑距离。关键是需要理解插入、删除、替换的转移方程。
 		
-  * [num96](https://leetcode-cn.com/problems/unique-binary-search-trees/)
+* [num96](https://leetcode-cn.com/problems/unique-binary-search-trees/)
 		比较巧妙的一道题，第一想法是分为左右子树递归，超时。
 		关键点在于递归左右子树的时候，其实种类数与数组无关，只与长度有关，
 		只需保存每个长度的种类数，就可以节省很多冗余计算。
 		
-  * [num139](https://leetcode-cn.com/problems/word-break/)
+* [num139](https://leetcode-cn.com/problems/word-break/)
 		拆分字符串为单词。本来想直接用hash表线性遍历，但是发现字符串为"aaaaaaa"，
 		字典为["aaaa","aaa"]的时候会分为"aaa","aaa","a"而错误。改用递归又超时。
 		最后用动态规划dp[i]记录前i个字符能否分割。
 
-  * [num152](https://leetcode-cn.com/problems/maximum-product-subarray/)
+* [num152](https://leetcode-cn.com/problems/maximum-product-subarray/)
 		找到一个子数组，使得乘积最大。这里主要要考虑正数和负数的情况。
 		由于负负得正，我们需要记录以index结尾的子数组的最小乘积（负数）以及最大的乘积
 		
-  * [num198](https://leetcode-cn.com/problems/house-robber/)
+* [num198](https://leetcode-cn.com/problems/house-robber/)
 		简单的动态规划。可以用两个变量节省空间。
 		
-  * [num221](https://leetcode-cn.com/problems/maximal-square/)
+* [num221](https://leetcode-cn.com/problems/maximal-square/)
 		很难的一道动态规划题，根本没想到。其实从右下角来看，形成正方形，需要当前格子、上、左、左上都是1。
 		换言之，正方形的边长受到上、左、左上的限制。参考
 		[题解](https://leetcode-cn.com/problems/maximal-square/solution/li-jie-san-zhe-qu-zui-xiao-1-by-lzhlyle/)
 		
-  * [num238](https://leetcode-cn.com/problems/product-of-array-except-self/)
+* [num238](https://leetcode-cn.com/problems/product-of-array-except-self/)
 		题目要求不能用除法，那只能动态规划了。
 		用left数组记录index左边的乘积，用right数组记录index右边的乘积，left和right的乘积就是答案。
 		
 ####  贪心算法
 	
-  * [num121](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+* [num121](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
 		简单题，第一次没理解。先计算MaxProfit，再维护MinPrice，一次遍历即可以得到MaxProfit
 		  
-  * [num55](https://leetcode-cn.com/problems/jump-game/)
+* [num55](https://leetcode-cn.com/problems/jump-game/)
 		使用题解中提供的方法，贪心算法。直接挨个跳，判断能否跳到第i个，如果可以跳到第i个，就可以从第i个继续跳，直至false.
 		
-  * [num621](https://leetcode-cn.com/problems/task-scheduler/)
+* [num621](https://leetcode-cn.com/problems/task-scheduler/)
 		可以用桶的思想来理解。首先调度次数最多的任务，然后调度第二多的。
 		  
-  * [num1013](https://leetcode-cn.com/problems/partition-array-into-three-parts-with-equal-sum/)
+* [num1013](https://leetcode-cn.com/problems/partition-array-into-three-parts-with-equal-sum/)
 		简单题，但是并不顺利。此题的解题要点是：将数组分为三个和相等的部分其实就是每个部分为sum/3。除此之外，
 		写的代码不够简洁，还多次出现异常，判断语句的条件还需要多琢磨。
 		
 #### 双指针
-  * [num42](https://leetcode-cn.com/problems/trapping-rain-water/)
+* [num42](https://leetcode-cn.com/problems/trapping-rain-water/)
 		困难题，可以利用动态规划算法也可以利用双指针。考虑动态规划算法，我们其实可以从左边、右边同时、双向遍历数组。
 		主要思想是：第i个位置存储的雨水必定是被左边、右边的两个最高的柱子中的短板限定的。
 		
-  * [num75](https://leetcode-cn.com/problems/sort-colors/)
+* [num75](https://leetcode-cn.com/problems/sort-colors/)
   		此题只有三种颜色，因此可以用双指针的方法，把0放在左边，2放在右边，剩下的1自然也就排好序了。
 		
-  * [num18](https://leetcode-cn.com/problems/4sum/)
+* [num18](https://leetcode-cn.com/problems/4sum/)
 		四数之和问题，和[num454](https://leetcode-cn.com/problems/4sum-ii/)类似。
 		这里使用双指针，提前排序数组，可以减少时间复杂度。4层循环可变为3层循环。
 		
-  * [num76](https://leetcode-cn.com/problems/minimum-window-substring/)
+* [num76](https://leetcode-cn.com/problems/minimum-window-substring/)
 		双指针定义滑动窗口，来求最小覆盖子串。思路比较好想，但是滑动窗口的判断还需要多调试！
 	
 	  
@@ -364,18 +364,20 @@ def backtrack(路径, 选择列表):
 * [num1227](https://leetcode-cn.com/problems/airplane-seat-assignment-probability/)
 		飞机抢座问题，算坐对的概率，我是通过算坐错的概率求解的。
 		
-  * [num62](https://leetcode-cn.com/problems/unique-paths/)
+* [num62](https://leetcode-cn.com/problems/unique-paths/)
 		求路径的数量。可以用排列组合计算，也可以用动态规划。	
 		
 		
 # 骚操作
 * [num136](https://leetcode-cn.com/problems/single-number/)
 		使用异或运算符，可以使用O(1)的空间。
+		
 		```
 		1.交换两个变量的值，却不需要引入第三个变量： a = a^b, b = a^b, a = a^b
 		2.找出[a,a,b,c,b,a,c]中只出现奇数次的数： a^a^b^c^b^a^c = (a^a^a)^(b^b)^(c^c) = a
 		3.更多：https://blog.csdn.net/qq_39705793/article/details/81237005
 		```
+		
 
 * [num141](https://leetcode-cn.com/problems/linked-list-cycle/)
 		双指针，一快一慢，如果链表有环则必定快慢指针会相遇。（想象两个运动员跑步）
