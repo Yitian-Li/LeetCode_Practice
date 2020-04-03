@@ -1,42 +1,44 @@
-class Solution:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
+class heap:
+    def __init__(self, nums, k):
+        self.heap = []
         self.k = k
-        minheap = self.buildheap(nums, self.k)
-        return minheap[0]
+        for i in range(min(self.k, len(nums))):
+            self.heap.append(nums[i])
+            self.up(i)
 
-    def buildheap(self, nums, k):
-        minheap = []
-        for idx in range(min(len(nums), k)):
-            minheap.append(nums[idx])
-            minheap = self.sift_up(minheap, idx)
+        for num in nums[self.k:]:
+            if num > self.heap[0]:
+                self.heap[0] = num
+                self.down()
 
-        for num in nums[k:]:
-            if num > minheap[0]:
-                minheap[0] = num
-                minheap = self.sift_dowm(minheap)
-        return minheap
+    def up(self, idx):
+        while idx:
+            if self.heap[idx] < self.heap[(idx - 1) // 2]:
+                self.heap[idx], self.heap[(idx - 1) // 2] = self.heap[(idx - 1) // 2], self.heap[idx]
+                idx = (idx - 1) // 2
+            else:
+                break
 
-
-    def sift_up(self, minheap, idx):
-        val = minheap[idx]
-        while(idx > 0 and val < minheap[(idx-1)//2]):
-            minheap[idx] = minheap[(idx-1)//2]
-            idx = (idx-1)//2
-        minheap[idx] = val
-        return minheap
-
-    def sift_dowm(self, minheap):
-        val = minheap[0]
+    def down(self):
         idx = 0
-        while(idx*2+1 < self.k):
-            child = idx*2+1
-            if(child+1 < self.k and minheap[child+1] < minheap[child]):
+        val = self.heap[idx]
+
+        while idx * 2 + 1 < self.k:
+            child = idx * 2 + 1
+            if child+1<self.k and self.heap[child + 1] < self.heap[child]:
                 child += 1
-            if(val > minheap[child]):
-                minheap[idx] = minheap[child]
+            if val > self.heap[child]:
+                self.heap[child], self.heap[idx] = self.heap[idx], self.heap[child]
                 idx = child
             else:
                 break
-                
-        minheap[idx] = val
-        return minheap
+
+class Solution:
+    def findKthLargest(self, nums, k):
+        min_heap = heap(nums, k)
+        return min_heap.heap[0]
+
+# if __name__=="__main__":
+#     x = Solution()
+#     ans = x.findKthLargest([3,2,1,5,6,4], 2)
+#     print(ans)

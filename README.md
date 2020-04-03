@@ -4,7 +4,8 @@
 `python` `C++`
 
 本人是研二菜鸟一枚，这是我的[LeetCode](https://leetcode-cn.com/ "悬停显示")练习记录，记录了我的解题代码和解题思路总结，将不断更新。
-希望自己都能拿到理想中的offer。
+
+希望自己都能拿到理想中的offer。代码请参考[github链接](https://github.com/Yitian-Li/LeetCode_Practice)
 
 有用的链接：
   * [牛客网算法工程师面试](https://m.nowcoder.com/tutorial/95/menu)
@@ -30,14 +31,17 @@
 ```
 总结：对已排好序的数组，二分查找会更快
 ```
-  * [num378](https://leetcode-cn.com/problems/jump-game/) 
+* [num378](https://leetcode-cn.com/problems/jump-game/) 
 		升序的矩阵，查找第k小，也可以用堆或者优先队列实现
 		
-  * [num35](https://leetcode-cn.com/problems/search-insert-position/)
+* [num35](https://leetcode-cn.com/problems/search-insert-position/)
 		查找插入位置
   
-  * [num34](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+* [num34](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 		给出一个升序数组，通过二分查找算法，确定`target`的位置，比较简单，但是要注意left和right的判断语句
+		
+* [num240](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/)
+		因为是有序的二维矩阵，所以可以很容易想到二分查找。
 
 #### 动态规划
 
@@ -89,6 +93,15 @@
   * [num198](https://leetcode-cn.com/problems/house-robber/)
 		简单的动态规划。可以用两个变量节省空间。
 		
+  * [num221](https://leetcode-cn.com/problems/maximal-square/)
+		很难的一道动态规划题，根本没想到。其实从右下角来看，形成正方形，需要当前格子、上、左、左上都是1。
+		换言之，正方形的边长受到上、左、左上的限制。参考
+		[题解](https://leetcode-cn.com/problems/maximal-square/solution/li-jie-san-zhe-qu-zui-xiao-1-by-lzhlyle/)
+		
+  * [num238](https://leetcode-cn.com/problems/product-of-array-except-self/)
+		题目要求不能用除法，那只能动态规划了。
+		用left数组记录index左边的乘积，用right数组记录index右边的乘积，left和right的乘积就是答案。
+		
 ####  贪心算法
 	
   * [num121](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
@@ -138,43 +151,47 @@ def backtrack(路径, 选择列表):
 		撤销选择(出栈)
 ```
 
-* [num39](https://leetcode-cn.com/problems/combination-sum/)
+  * [num39](https://leetcode-cn.com/problems/combination-sum/)
 		中等题。需要从一个数组`candidates`中挑选出任意的数字满足和为`target`，数字可以重复使用。
 		  看了题解思路后，仍然无法写出代码来。看了题解代码后，虽然好像搞懂了，但是仍然不会写。需要多练习。
 		  
-* [num40](https://leetcode-cn.com/problems/combination-sum-ii/)
+  * [num40](https://leetcode-cn.com/problems/combination-sum-ii/)
 		中等题，39题的变体，数字不能重复使用。故在递归调用的时候，需要将`index`改为`index+1`, 
 		另外需要多写一行判断避免重复（相同的数字，交换顺序的情况）
 		
-* [num37](https://leetcode-cn.com/problems/sudoku-solver/)
+  * [num37](https://leetcode-cn.com/problems/sudoku-solver/)
 		解数独，主要用到了回溯的思想，挨个尝试。
 		
-* [num46](https://leetcode-cn.com/problems/permutations/)
+  * [num46](https://leetcode-cn.com/problems/permutations/)
 		回溯法求全排列。
 
-* [num78](https://leetcode-cn.com/problems/subsets/)
+  * [num78](https://leetcode-cn.com/problems/subsets/)
 		回溯求子集。
 		
-* [num79](https://leetcode-cn.com/problems/word-search/)
+  * [num79](https://leetcode-cn.com/problems/word-search/)
 		通过回溯、深度搜索来检测是否有满足条件的单词。
 		
-* [num90](https://leetcode-cn.com/problems/subsets-ii/submissions/)
+  * [num90](https://leetcode-cn.com/problems/subsets-ii/submissions/)
 		回溯求子集。对于选择列表有重复的元素的情况，用排序即可去重。
 		
 
 #### DFS,BFS
-* [num365](https://leetcode-cn.com/problems/water-and-jug-problem/)
+  * [num365](https://leetcode-cn.com/problems/water-and-jug-problem/)
 		把所有可能的情况都依次入栈，逐个检查栈中的元素，如果符合条件则返回。此题有数学解法。
 		
-* [num101](https://leetcode-cn.com/problems/symmetric-tree/)
+  * [num101](https://leetcode-cn.com/problems/symmetric-tree/)
 		判断一个树是否对称，可以采用递归的方法。但是我觉得使用广度优先搜索，并判断是否回文会更快。
 
-* [num102](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/), [num104](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
+  * [num102](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/), [num104](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 		简单的BFS
 		
-* [num200](https://leetcode-cn.com/problems/number-of-islands/)
+  * [num200](https://leetcode-cn.com/problems/number-of-islands/)
 		看了题解后，发现我的思路比较类似于并查集？然而判断条件还是设置的不对。
 		然而我觉得并查集的做法也太慢了，还是DFS或者BFS吧。
+		
+  * [num200](https://leetcode-cn.com/problems/invert-binary-tree/submissions/)
+		简单的bfs
+		
   
 # 数据结构
 
@@ -183,40 +200,47 @@ def backtrack(路径, 选择列表):
 总结：先进后出的特点，常见题型为括号匹配、文件路径。
 ```
 		  
-* [num71](https://leetcode-cn.com/problems/simplify-path/)
+  * [num71](https://leetcode-cn.com/problems/simplify-path/)
 		中等题，感觉较为简单。利用栈来简化绝对路径。在python中利用list可以轻松实现栈结构。
 		
-* [num84](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
+  * [num84](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
 		求最大矩形。单调栈，做完一头雾水，思路好像搞懂了但是代码写出来一直有case不通过
 		
-* [num85](https://leetcode-cn.com/problems/maximal-rectangle/)		
+  * [num85](https://leetcode-cn.com/problems/maximal-rectangle/)		
 		此题可转化为84题。需要再次看！
 		
-* [num94](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)	
+  * [num94](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)	
 		利用栈的特性，压入左子树直至p为空，然后出栈（得到父节点），染后压入右子树。
 		出栈顺序刚好就是左-根-右
 	  
 #### 链表
-* [num61](https://leetcode-cn.com/problems/rotate-list/)
+  * [num61](https://leetcode-cn.com/problems/rotate-list/)
 		中等题，一开始考虑用头插法来把后面的结点插到前面来，写的时候发现头插会导致逆序排列。
 		突然想到其实把单链表改成循环链表，问题就迎刃而解了。
 		链表只会用c++，因为不知道python指针怎么用，需要加强python学习。
 	  
-* [num86](https://leetcode-cn.com/problems/partition-list/submissions/)
+  * [num86](https://leetcode-cn.com/problems/partition-list/submissions/)
 		中等难度题，感觉较为简单。用两个链表分别存小于和大于的结点，再合并就行。
 		
-* [num876](https://leetcode-cn.com/problems/middle-of-the-linked-list/)
+  * [num876](https://leetcode-cn.com/problems/middle-of-the-linked-list/)
 		简单题。
-	  
+		
+  * [num206](https://leetcode-cn.com/problems/reverse-linked-list/)
+		反转链表除了头插法，还可以用双指针，
 
+  * [num234](https://leetcode-cn.com/problems/palindrome-linked-list/solution/)	
+		判断一个链表是否为回文，除了用数组外，还可以将右半部分反转，然后与左半部分比较。
 		
 ####  队列
-* [num641](https://leetcode-cn.com/problems/design-circular-deque/)
+  * [num641](https://leetcode-cn.com/problems/design-circular-deque/)
 		实现一个双向循环队列。
 		
-* [num933](https://leetcode-cn.com/problems/number-of-recent-calls/)
+  * [num933](https://leetcode-cn.com/problems/number-of-recent-calls/)
 		队首队尾双指针，即可实现。
 
+  * [num239](https://leetcode-cn.com/problems/sliding-window-maximum/)
+		一道滑动窗口的题，第一反应是构建堆，很难想到使用双向队列保存数组的索引。
+		保存的规则为，队列的第一位始终是当前窗口最大的数`max`的索引，其余是窗口中`max`后面的数的索引。
 		
 ####  树
 ```
@@ -225,15 +249,15 @@ def backtrack(路径, 选择列表):
 	bfs：维护一个队列的方法，队列存储某一层的所有节点
 	前序、中序、后序遍历：先遍历根节点还是、中遍历根节点、后遍历根节点
 ```
-* [num257](https://leetcode-cn.com/problems/binary-tree-paths/)
+  * [num257](https://leetcode-cn.com/problems/binary-tree-paths/)
 		很久没做过树的相关题目了，做一个简单题回忆下如何遍历树。
 		
-* [num199](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
+  * [num199](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
 		右视图问题。
 		比较容易想到的是广度优先搜索算法，用一个数组存储某一层最右边的元素。
 		也可以用深度优先搜索算法，递归调用的时候加入一个参数depth，在递归调用时不断维护当前的深度，同时用一个数组存储最右边的元素。
 		
-* [num110](https://leetcode-cn.com/problems/balanced-binary-tree/)
+  *[num110](https://leetcode-cn.com/problems/balanced-binary-tree/)
 		平衡树问题。先判断子树是否平衡，再判断当前结点是否平衡，可以节省时间。
 		即采用深度优先搜索，通过左子树是否平衡、右子树是否平衡、左子树和右子树的高度差判断是否为平衡树。
 		另外发现，在python中，在函数A中再定义函数B，即使用嵌套函数，会导致变慢。
@@ -253,6 +277,17 @@ def backtrack(路径, 选择列表):
 		
 * [num114](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/)
 		把树变为链表。即把左子树插入到右子树上面。
+		
+* [num208](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/)
+		第一次听说前缀树。其实就是字典嵌套字典！
+		
+* [num236](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/submissions/)
+		寻找两个节点的最近祖先节点。我觉得我写的代码时间复杂度也不高啊，遍历所有的结点也是O(n)。
+		可能是回溯的性能太差，总是需要遍历完所有的路径。改用栈去搜索路径会快很多。
+		
+		使用深度优先搜索的方法，如果当前结点是p或者q，则记录`mid=1`，如果当前结点的左子树包含p或者q，就记录`left=1`，右子树一样。
+		当`mid+left+right >= 2`就说明这个结点是最近祖先。
+		
 		
 ####  堆
 ```
@@ -302,6 +337,17 @@ def backtrack(路径, 选择列表):
 * [num160](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
 		使用哈希表查找O(1)的特点节约时间
 		
+####  图
+```
+[拓扑排序](https://www.cnblogs.com/bigsai/p/11489260.html)
+```
+* [num207](https://leetcode-cn.com/problems/course-schedule/)
+		广度优先遍历利用入度判断是否有环（拓扑排序），或者深度优先搜索利用标志位判断是否有环
+		
+
+		
+		
+		
 # 数学
 * [num36](https://leetcode-cn.com/problems/valid-sudoku/)
 		检查当前数独是否有效。
@@ -340,4 +386,10 @@ def backtrack(路径, 选择列表):
 * [num169](https://leetcode-cn.com/problems/majority-element/)
 		max函数除了`max(a,b)`取a，b的最大值，`max(arr)`取数组最大值，
 		还可以`max(arr, key= function)`的方法对`arr`的元素先`function`再比较。
+
+* [num240](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/)
+		注意矩阵是行、列单调递增的，所以从左下角开始遍历，往上走就是单减，往右走是单增，可以利用这个单调性找到合适的位置，时间复杂度为O(m+n)
+		同样，右上角也可以。非常巧妙。。
+
+
 		
