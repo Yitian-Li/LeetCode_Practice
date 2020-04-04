@@ -101,6 +101,28 @@
 * [num238](https://leetcode-cn.com/problems/product-of-array-except-self/)
 		题目要求不能用除法，那只能动态规划了。
 		用left数组记录index左边的乘积，用right数组记录index右边的乘积，left和right的乘积就是答案。
+
+* [num279](https://leetcode-cn.com/problems/perfect-squares/)
+		感觉是动态规划会快些，然而这里贪心枚举更快（而且是循环递归？？？）
+		
+* [num300](https://leetcode-cn.com/problems/longest-increasing-subsequence/solution/)
+		动态规划求最长单增序列。
+
+```
+买卖股票问题
+```
+* [num121](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+		买卖股票1，简单的动态规划。
+* [num122](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+		买卖股票2，简单的动态规划，需要考虑持股、不持股两个状态。
+* [num123](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
+		非常难以理解的几个地方：base case的初始化为什么要从-1开始？（因为算第0天的时候方便）
+		k代表的是什么？（买入次数）
+		为什么返回`dp[n-1][max_k][0]`而不是`dp[n-1][for i in range(k)][0]`
+* [num309](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
+		买卖股票5，动态规划很容易想到。
+		但是我的动态规划超时了...因为我考虑的是第k天卖股票，然后重新从第j天买，第i天卖，这样有三层循环。
+		实际上可以根据第i天是否持有股票，做情况分类。
 		
 ####  贪心算法
 	
@@ -116,6 +138,9 @@
 * [num1013](https://leetcode-cn.com/problems/partition-array-into-three-parts-with-equal-sum/)
 		简单题，但是并不顺利。此题的解题要点是：将数组分为三个和相等的部分其实就是每个部分为sum/3。除此之外，
 		写的代码不够简洁，还多次出现异常，判断语句的条件还需要多琢磨。
+		
+* [num279](https://leetcode-cn.com/problems/perfect-squares/)
+		感觉是动态规划会快些，然而这里贪心枚举更快（而且是循环递归？？？）
 		
 #### 双指针
 * [num42](https://leetcode-cn.com/problems/trapping-rain-water/)
@@ -191,7 +216,10 @@ def backtrack(路径, 选择列表):
 		
   * [num200](https://leetcode-cn.com/problems/invert-binary-tree/submissions/)
 		简单的bfs
-		
+
+  * [num301](https://leetcode-cn.com/problems/remove-invalid-parentheses/)
+		可能是被困难吓倒了，在我眼中的暴力法，居然是正解。
+		直接挨个删除括号，然后判断是否合法。
   
 # 数据结构
 
@@ -287,7 +315,9 @@ def backtrack(路径, 选择列表):
 		
 		使用深度优先搜索的方法，如果当前结点是p或者q，则记录`mid=1`，如果当前结点的左子树包含p或者q，就记录`left=1`，右子树一样。
 		当`mid+left+right >= 2`就说明这个结点是最近祖先。
-		
+
+* [num236](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)
+		二叉树的序列化和反序列化，这也是leetcode中是如何保存二叉树的。序列化和反序列化都使用dfs递归完成。
 		
 ####  堆
 ```
@@ -392,6 +422,11 @@ def backtrack(路径, 选择列表):
 * [num240](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/)
 		注意矩阵是行、列单调递增的，所以从左下角开始遍历，往上走就是单减，往右走是单增，可以利用这个单调性找到合适的位置，时间复杂度为O(m+n)
 		同样，右上角也可以。非常巧妙。。
+
+* [num287](https://leetcode-cn.com/problems/find-the-duplicate-number/)	
+		n个坑，n+1个数组，如果表示为idx-nums\[idx]的话，一定会有个环。
+		然后，快慢指针和环的又一次使用，和num141很像！
+
 
 
 		
