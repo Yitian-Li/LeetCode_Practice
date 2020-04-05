@@ -27,6 +27,9 @@
 * [num148](https://leetcode-cn.com/problems/sort-list/)
 		链表的排序，使用归并排序（从上至下的递归法、从底向上的迭代法）
 
+* [num347](https://leetcode-cn.com/problems/top-k-frequent-elements/)
+		先统计出现的频率，然后根据频率排序。
+
 #### 二分查找
 ```
 总结：对已排好序的数组，二分查找会更快
@@ -107,18 +110,41 @@
 		
 * [num300](https://leetcode-cn.com/problems/longest-increasing-subsequence/solution/)
 		动态规划求最长单增序列。
+		
+* [num312](https://leetcode-cn.com/problems/burst-balloons/)
+		重点在于设置二维dp[i][j]用于保存从i到j的得分。但是还需要注意，从底向上规划，需要先算长度小的区间，
+		即i需要倒序。这里没搞懂，也不打算搞懂了。。。
 
-```
-买卖股票问题
-```
+* [num322](https://leetcode-cn.com/problems/coin-change/)
+		简单的动态规划，但是这个题需要注意内层、外层循环的顺序，不能颠倒，否则需要多些几条判断语句
+		
+* [num337](https://leetcode-cn.com/problems/house-robber-iii/)
+		递归的方法很容易解决，但是需要加上动态规划，记忆孩子结点的最大值。
+		
+* [num337](https://leetcode-cn.com/problems/counting-bits/)
+		震惊，居然判断二进制中1的个数，可以用动态规划。
+		
+#### 动态规划解决买卖股票
+
 * [num121](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
 		买卖股票1，简单的动态规划。
 * [num122](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
 		买卖股票2，简单的动态规划，需要考虑持股、不持股两个状态。
 * [num123](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
-		非常难以理解的几个地方：base case的初始化为什么要从-1开始？（因为算第0天的时候方便）
-		k代表的是什么？（买入次数）
-		为什么返回`dp[n-1][max_k][0]`而不是`dp[n-1][for i in range(k)][0]`
+		非常难以理解的几个地方：
+		
+		1. base case的初始化为什么要从-1开始？（因为算第0天的时候方便）
+		2. k代表的是什么？（买入次数）
+		3. 为什么返回`dp[n-1][max_k][0]`而不是`dp[n-1][for i in range(k)][0]`
+		
+		其实可以将此问题拆分为由第i天分割的两部分，分别求左边部分和右边部分的利润，退化为num121的问题
+
+* [num188](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
+		和上面那个题基本一样，但是由于k不是2，不能再用左右分割的方法，必须用i,k,j的动态规划
+		
+* [num714](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/submissions/)
+		只需要在卖或者买的时候多减一个手续费，就ok了
+		
 * [num309](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
 		买卖股票5，动态规划很容易想到。
 		但是我的动态规划超时了...因为我考虑的是第k天卖股票，然后重新从第j天买，第i天卖，这样有三层循环。
