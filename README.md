@@ -13,9 +13,13 @@
 
 本文将：
 
-1.动态规划、贪心算法、回溯算法相关的题等归为`算法`
+1. 动态规划、贪心算法、回溯算法等相关的题等归为`算法`
 
-2.将数组、链表、数组等相关的题归为`数据结构`
+2. 将数组、链表、数组等相关的题归为`数据结构`
+
+3. 将一些用数学公式、技巧等相关的题归为`数学相关`
+
+4. 将一些思路奇妙等相关的题归为`骚操作`
 
 # 算法
 
@@ -55,6 +59,9 @@
 
 如何写好动态规划算法，关键是找到状态转移方程。
 ```
+
+* [num5](https://leetcode-cn.com/problems/longest-palindromic-substring/) 
+		动态规划解决回文子串。
 
 * [num55](https://leetcode-cn.com/problems/jump-game/) 
 		中等难度题，比较容易想到动态规划，但是时间很慢，复杂度为`$O(n^2)$`，python超时，但c++可通过。
@@ -123,6 +130,14 @@
 		
 * [num337](https://leetcode-cn.com/problems/counting-bits/)
 		震惊，居然判断二进制中1的个数，可以用动态规划。
+		
+* [num416](https://leetcode-cn.com/problems/partition-equal-subset-sum/)
+		背包问题，上次用递归的方式解决的，其实动态规划会更好。
+		
+* [num494](https://leetcode-cn.com/problems/target-sum/)
+		和Num416类似，但是这次是+或者-，而不是+或者不+
+		
+* [num647](https://leetcode-cn.com/problems/palindromic-substrings/)
 		
 #### 动态规划解决买卖股票
 
@@ -201,6 +216,8 @@ def backtrack(路径, 选择列表):
 		backtrack(路径, 选择列表)
 		撤销选择(出栈)
 ```
+  * [num17](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/)
+		电话号码的组合，这里并没有用到栈，只需要不断的从数字中取值，然后backtrack的时候去掉第0位。
 
   * [num39](https://leetcode-cn.com/problems/combination-sum/)
 		中等题。需要从一个数组`candidates`中挑选出任意的数字满足和为`target`，数字可以重复使用。
@@ -214,7 +231,11 @@ def backtrack(路径, 选择列表):
 		解数独，主要用到了回溯的思想，挨个尝试。
 		
   * [num46](https://leetcode-cn.com/problems/permutations/)
-		回溯法求全排列。
+  * [num47](https://leetcode-cn.com/problems/permutations-ii/)
+		两道，回溯法求全排列。
+		
+  * [num77](https://leetcode-cn.com/problems/combinations/submissions/)
+		回溯求组合，注意因为是组合，所以可以剪枝。
 
   * [num78](https://leetcode-cn.com/problems/subsets/)
 		回溯求子集。
@@ -246,6 +267,19 @@ def backtrack(路径, 选择列表):
   * [num301](https://leetcode-cn.com/problems/remove-invalid-parentheses/)
 		可能是被困难吓倒了，在我眼中的暴力法，居然是正解。
 		直接挨个删除括号，然后判断是否合法。
+		
+
+  * [num437](https://leetcode-cn.com/problems/path-sum-iii/)
+		将问题分为，从该节点开始计算路径和从孩子结点开始计算
+		
+  * [num538](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/)
+		右中左的遍历顺序。
+		
+  * [num543](https://leetcode-cn.com/problems/diameter-of-binary-tree/)
+		这个题应该是做过的。计算路径长度，和深度有关
+		
+  * [num617]https://leetcode-cn.com/problems/merge-two-binary-trees/
+		简单的dfs，也可以用bfs
   
 # 数据结构
 
@@ -266,8 +300,17 @@ def backtrack(路径, 选择列表):
   * [num94](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)	
 		利用栈的特性，压入左子树直至p为空，然后出栈（得到父节点），染后压入右子树。
 		出栈顺序刚好就是左-根-右
+		
+  * [num394](https://leetcode-cn.com/problems/decode-string/)
+		大佬的代码简直是让人五体投地。。。算法跟我一样然而我就是写不出代码。
+		
+  * [num739](https://leetcode-cn.com/problems/decode-string/)
+		依然是利用单调栈。因为需要知道最邻近的高温，所以比当前温度低的都是无用信息，直接出栈。
 	  
 #### 链表
+  * [num2](https://leetcode-cn.com/problems/add-two-numbers/)
+		简单的链表遍历。
+
   * [num61](https://leetcode-cn.com/problems/rotate-list/)
 		中等题，一开始考虑用头插法来把后面的结点插到前面来，写的时候发现头插会导致逆序排列。
 		突然想到其实把单链表改成循环链表，问题就迎刃而解了。
@@ -365,6 +408,13 @@ def backtrack(路径, 选择列表):
 	可以用collections.Counter()快速得到一个计数字典
 	set()也是哈希表，和字典一样，时间复杂度为O(1)
 ```
+
+* [num1](https://leetcode-cn.com/problems/two-sum/submissions/)
+		自己是真的菜，已经第二轮了，但是居然还不会简单题。
+
+* [num3](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+		子串问题可以用哈希表实现查找的O(1)
+
 * [num1160](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/)
 		用collections.Counter()得到chars和word的字母计数，如果word的计数小于chars则可以。
 
@@ -393,6 +443,9 @@ def backtrack(路径, 选择列表):
 * [num160](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
 		使用哈希表查找O(1)的特点节约时间
 		
+* [num560](https://leetcode-cn.com/problems/subarray-sum-equals-k/)
+		使用哈希表存储
+		
 ####  图
 ```
 [拓扑排序](https://www.cnblogs.com/bigsai/p/11489260.html)
@@ -400,11 +453,14 @@ def backtrack(路径, 选择列表):
 * [num207](https://leetcode-cn.com/problems/course-schedule/)
 		广度优先遍历利用入度判断是否有环（拓扑排序），或者深度优先搜索利用标志位判断是否有环
 		
-
-		
+* [num399](https://leetcode-cn.com/problems/evaluate-division/)
+		写代码的准确性还是很差，总是要调很久。这个题是有向图的遍历，我使用的是邻接矩阵的方式来完成dfs。
 		
 		
 # 数学
+* [num4](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/)
+		中位数查找、
+
 * [num36](https://leetcode-cn.com/problems/valid-sudoku/)
 		检查当前数独是否有效。
 
@@ -421,7 +477,11 @@ def backtrack(路径, 选择列表):
 		飞机抢座问题，算坐对的概率，我是通过算坐错的概率求解的。
 		
 * [num62](https://leetcode-cn.com/problems/unique-paths/)
-		求路径的数量。可以用排列组合计算，也可以用动态规划。	
+		求路径的数量。可以用排列组合计算，也可以用动态规划。
+
+* gcd
+		笔试的时候突然用到最大公约数，但是我却忘了该怎么算最大公约数，还好有math.gcd()
+		写下代码，练习一下，以免面试碰到
 		
 		
 # 骚操作
@@ -453,6 +513,8 @@ def backtrack(路径, 选择列表):
 		n个坑，n+1个数组，如果表示为idx-nums\[idx]的话，一定会有个环。
 		然后，快慢指针和环的又一次使用，和num141很像！
 
+* [num461](https://leetcode-cn.com/problems/hamming-distance/)
+		n与n-1做与运算，会消掉最右边的1
 
 
 		
