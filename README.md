@@ -30,9 +30,15 @@
 		
 * [num148](https://leetcode-cn.com/problems/sort-list/)
 		链表的排序，使用归并排序（从上至下的递归法、从底向上的迭代法）
+		
+* [num315](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/)
+		统计当前索引idx的右部分数组，有多少个元素比nums[idx]小，用到了归并排序的思想。
+		因为归并排序的过程中，可以
 
 * [num347](https://leetcode-cn.com/problems/top-k-frequent-elements/)
 		先统计出现的频率，然后根据频率排序。
+
+
 
 #### 二分查找
 ```
@@ -284,6 +290,9 @@ def backtrack(路径, 选择列表):
   * [num301](https://leetcode-cn.com/problems/remove-invalid-parentheses/)
 		可能是被困难吓倒了，在我眼中的暴力法，居然是正解。
 		直接挨个删除括号，然后判断是否合法。
+		
+  * [num329](https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/)
+		记忆化的DFS，居然一次AC，我真是个小天才。
 
   * [num365](https://leetcode-cn.com/problems/water-and-jug-problem/)
 		把所有可能的情况都依次入栈，逐个检查栈中的元素，如果符合条件则返回。此题有数学解法。
@@ -397,6 +406,10 @@ def backtrack(路径, 选择列表):
 * [num208](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/)
 		第一次听说前缀树。其实就是字典嵌套字典！
 		
+* [num208](https://leetcode-cn.com/problems/word-search-ii/）
+		前缀树的应用，先将需要查询的单词存到trie中，然后利用backtrack去遍历board，查询trie中是否有这个单词。
+		与暴力回溯的区别在于，这里使用了前缀树来剪枝。
+		
 * [num236](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/submissions/)
 		寻找两个节点的最近祖先节点。我觉得我写的代码时间复杂度也不高啊，遍历所有的结点也是O(n)。
 		可能是回溯的性能太差，总是需要遍历完所有的路径。改用栈去搜索路径会快很多。
@@ -421,8 +434,15 @@ def backtrack(路径, 选择列表):
 	特别需要注意堆实际可以用数组来构建，因为它是一个二叉完全树。
 	给定index，其父节点为(index-1)//2，左右孩子结点为index*2+1、index*2+2
 ```
-* [num215](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)[num703](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/)
+* [num215](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+* [num703](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/)
 		都是通过构建最小堆，寻找第K大的数
+		
+* [num295](https://leetcode-cn.com/problems/find-median-from-data-stream/)
+		通过两个堆分别记录中位数左边的数、右边的数。需要注意的是如何平衡两个堆的大小：
+		每次添加新的元素时，如果添加前两个堆的大小一样，则先把num添加到最大堆中，然后选取最大的数添加到最小堆中。
+		这样做的目的是保证两个堆的平衡、有序。
+		
 ####  哈希表
 ```
 总结：
@@ -456,6 +476,9 @@ def backtrack(路径, 选择列表):
 		字典是无序的，但可以通过`from collections import OrderedDict`构建一个有序字典。
 		OrderedDict除了普通dict有的特点外，还可以`d.move_to_end(key)`把某个key-value对移动到尾部，
 		`popitem(last=True)`删除并返回一个key-value对，`last=True`表示先进后出，`last=False`表示先进先出。
+		
+* [num149](https://leetcode-cn.com/problems/max-points-on-a-line/)
+		通过斜率和截距来构建直线即可。但是需要注意当两个点重合，或者斜率为正无穷的情况。
 		
 * [num160](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
 		使用哈希表查找O(1)的特点节约时间
