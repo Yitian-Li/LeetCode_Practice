@@ -97,6 +97,9 @@
 * [num72](https://leetcode-cn.com/problems/edit-distance/)
 		动态规划求编辑距离。关键是需要理解插入、删除、替换的转移方程。
 		
+* [num91](https://leetcode-cn.com/problems/decode-ways/)
+		其实这个题不难，但是通过的案例总是很少。问题在于没有写清楚判断，什么时候应该两个数字结合，什么时候不结合。
+		
 * [num96](https://leetcode-cn.com/problems/unique-binary-search-trees/)
 		比较巧妙的一道题，第一想法是分为左右子树递归，超时。
 		关键点在于递归左右子树的时候，其实种类数与数组无关，只与长度有关，
@@ -438,6 +441,9 @@ def backtrack(路径, 选择列表):
 * [num703](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/)
 		都是通过构建最小堆，寻找第K大的数
 		
+* [num215](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+		很难的一道天际线的题，虽然直观感觉会使用扫描线，但是如何用堆记录当前扫描位置的高度是难点。
+		
 * [num295](https://leetcode-cn.com/problems/find-median-from-data-stream/)
 		通过两个堆分别记录中位数左边的数、右边的数。需要注意的是如何平衡两个堆的大小：
 		每次添加新的元素时，如果添加前两个堆的大小一样，则先把num添加到最大堆中，然后选取最大的数添加到最小堆中。
@@ -518,8 +524,14 @@ def backtrack(路径, 选择列表):
 * [num37](https://leetcode-cn.com/problems/sudoku-solver/)
 		解数独，主要用到了回溯的思想，挨个尝试。
 		
+* [num50](https://leetcode-cn.com/problems/sudoku-solver/)
+		快速幂
+		
 * [num62](https://leetcode-cn.com/problems/unique-paths/)
 		求路径的数量。可以用排列组合计算，也可以用动态规划。
+		
+* [num166](https://leetcode-cn.com/problems/fraction-to-recurring-decimal/)
+		模拟除法
 
 * [num365](https://leetcode-cn.com/problems/water-and-jug-problem/)
 		通过分析发现，其实每次对水壶操作，水壶变化的总量都可以用公式表达出来，然后转为为数学公式求解。
