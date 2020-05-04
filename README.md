@@ -31,9 +31,15 @@
 * [num148](https://leetcode-cn.com/problems/sort-list/)
 		链表的排序，使用归并排序（从上至下的递归法、从底向上的迭代法）
 		
+* [num179](https://leetcode-cn.com/problems/largest-number/)
+		python富比较方法，重载`>`运算符
+		
 * [num315](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/)
 		统计当前索引idx的右部分数组，有多少个元素比nums[idx]小，用到了归并排序的思想。
 		因为归并排序的过程中，可以
+		
+* [num324](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/)
+		摆动排序，形成大-小-大-小的顺序。比较容易理解的办法是先排序，然后将排序后的数组从中间分为两部分，再重新组装。
 
 * [num347](https://leetcode-cn.com/problems/top-k-frequent-elements/)
 		先统计出现的频率，然后根据频率排序。
@@ -331,6 +337,9 @@ def backtrack(路径, 选择列表):
   * [num94](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)	
 		利用栈的特性，压入左子树直至p为空，然后出栈（得到父节点），染后压入右子树。
 		出栈顺序刚好就是左-根-右
+
+  * [num227](https://leetcode-cn.com/problems/basic-calculator-ii/)
+		利用栈的特性，实现计算器，其实就好像在给算式加括号一样。（利用栈统计括号）
 		
   * [num394](https://leetcode-cn.com/problems/decode-string/)
 		大佬的代码简直是让人五体投地。。。算法跟我一样然而我就是写不出代码。
