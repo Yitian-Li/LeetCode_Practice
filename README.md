@@ -281,13 +281,17 @@ def backtrack(路径, 选择列表):
 		
 
 #### DFS,BFS
-
+  * [num54](https://leetcode-cn.com/problems/spiral-matrix/)
+		其实这个题不是dfs也不是bfs，就是简单的遍历，注意边界条件即可。
 		
   * [num101](https://leetcode-cn.com/problems/symmetric-tree/)
 		判断一个树是否对称，可以采用递归的方法。但是我觉得使用广度优先搜索，并判断是否回文会更快。
 
   * [num102](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/), [num104](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 		简单的BFS
+		
+  * [num130](https://leetcode-cn.com/problems/surrounded-regions/)
+		连通岛屿问题。
 		
   * [num200](https://leetcode-cn.com/problems/number-of-islands/)
 		看了题解后，发现我的思路比较类似于并查集？然而判断条件还是设置的不对。
@@ -315,8 +319,12 @@ def backtrack(路径, 选择列表):
   * [num543](https://leetcode-cn.com/problems/diameter-of-binary-tree/)
 		这个题应该是做过的。计算路径长度，和深度有关
 		
-  * [num617]https://leetcode-cn.com/problems/merge-two-binary-trees/
+  * [num617](https://leetcode-cn.com/problems/merge-two-binary-trees/)
 		简单的dfs，也可以用bfs
+		
+#### 分治
+  * [num395](https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/)
+		通过出现次数小于k的字符，将字符串分割为多个子串，直到不包含次数小于k的子串
   
 # 数据结构
 
@@ -584,6 +592,9 @@ def backtrack(路径, 选择列表):
 * [num287](https://leetcode-cn.com/problems/find-the-duplicate-number/)	
 		n个坑，n+1个数组，如果表示为idx-nums\[idx]的话，一定会有个环。
 		然后，快慢指针和环的又一次使用，和num141很像！
+		
+* [num334](https://leetcode-cn.com/problems/increasing-triplet-subsequence/)	
+		一道很神奇的题，重点在于维护最小值和次小值。
 
 * [num461](https://leetcode-cn.com/problems/hamming-distance/)
 		n与n-1做与运算，会消掉最右边的1
