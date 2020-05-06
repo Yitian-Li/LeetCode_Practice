@@ -299,6 +299,9 @@ def backtrack(路径, 选择列表):
 		
   * [num200](https://leetcode-cn.com/problems/invert-binary-tree/submissions/)
 		简单的bfs
+		
+  * [num210](https://leetcode-cn.com/problems/course-schedule-ii/submissions/)
+		课程表，其实就是判断图中是否有环，可以利用拓扑排序，有dfs和bfs两种方式。
 
   * [num301](https://leetcode-cn.com/problems/remove-invalid-parentheses/)
 		可能是被困难吓倒了，在我眼中的暴力法，居然是正解。
@@ -345,6 +348,12 @@ def backtrack(路径, 选择列表):
   * [num94](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)	
 		利用栈的特性，压入左子树直至p为空，然后出栈（得到父节点），染后压入右子树。
 		出栈顺序刚好就是左-根-右
+		
+  * [num150](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/)	
+		后缀表达式，类似num227，不过更为简单，因为不需要记录符号。
+		
+  * [num224](https://leetcode-cn.com/problems/basic-calculator/)
+		利用栈实现计算器，这里是带括号的，需要对括号处理。
 
   * [num227](https://leetcode-cn.com/problems/basic-calculator-ii/)
 		利用栈的特性，实现计算器，其实就好像在给算式加括号一样。（利用栈统计括号）
@@ -580,6 +589,9 @@ def backtrack(路径, 选择列表):
 		
 * [num160](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
 		双指针法，详细看代码吧。总结是，第二次遍历的时候，一定是同步的。
+		
+* [num162](https://leetcode-cn.com/problems/find-peak-element/)
+		寻找峰值，可以通过二分法查找。
 		
 * [num169](https://leetcode-cn.com/problems/majority-element/)
 		max函数除了`max(a,b)`取a，b的最大值，`max(arr)`取数组最大值，
