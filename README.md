@@ -25,7 +25,7 @@
 
 #### 排序
 	
-* [num56](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+* [num56](https://leetcode-cn.com/problems/merge-intervals/)
 		合并区间，先对区间排序，然后判断是否有交集即可
 		
 * [num148](https://leetcode-cn.com/problems/sort-list/)
@@ -51,11 +51,11 @@
 总结：对已排好序的数组，二分查找会更快
 ```
 
-* [num35](https://leetcode-cn.com/problems/search-insert-position/)
-		查找插入位置
-  
 * [num34](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 		给出一个升序数组，通过二分查找算法，确定`target`的位置，比较简单，但是要注意left和right的判断语句
+
+* [num35](https://leetcode-cn.com/problems/search-insert-position/)
+		查找插入位置
 		
 * [num240](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/)
 		因为是有序的二维矩阵，所以可以很容易想到二分查找。
@@ -550,6 +550,9 @@ def backtrack(路径, 选择列表):
 * [num37](https://leetcode-cn.com/problems/sudoku-solver/)
 		解数独，主要用到了回溯的思想，挨个尝试。
 		
+* [num43](https://leetcode-cn.com/problems/multiply-strings/)
+		大数相乘，字符串相乘，转换为字符串相加。
+		
 * [num50](https://leetcode-cn.com/problems/sudoku-solver/)
 		快速幂
 		
@@ -561,6 +564,9 @@ def backtrack(路径, 选择列表):
 
 * [num365](https://leetcode-cn.com/problems/water-and-jug-problem/)
 		通过分析发现，其实每次对水壶操作，水壶变化的总量都可以用公式表达出来，然后转为为数学公式求解。
+		
+* [num415](https://leetcode-cn.com/problems/add-strings/)
+		大数相加，字符串相加。
 		
 * [num650](https://leetcode-cn.com/problems/2-keys-keyboard/submissions/)
 		复制拷贝问题。其实可以把n个字符分解为i*j个字符。
