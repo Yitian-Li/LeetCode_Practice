@@ -567,7 +567,10 @@ def backtrack(路径, 选择列表):
 
 * [num365](https://leetcode-cn.com/problems/water-and-jug-problem/)
 		通过分析发现，其实每次对水壶操作，水壶变化的总量都可以用公式表达出来，然后转为为数学公式求解。
-		
+
+* [num384](https://leetcode-cn.com/problems/shuffle-an-array/)
+        洗牌算法
+        
 * [num415](https://leetcode-cn.com/problems/add-strings/)
 		大数相加，字符串相加。
 		
