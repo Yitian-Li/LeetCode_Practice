@@ -1,57 +1,37 @@
 class Solution:
-    def canFinish(self, numCourses, prerequisites):
-
-        def bfs(numCourses, pres, in_count):
-            queue = []
-            for i in range(numCourses):
-                if in_count[i] == 0:
-                    queue.append(i)
-            while queue:
-                # print(queue)
-                cur = queue[0]
-                queue.pop(0)
-                numCourses -= 1
-                for pre in pres[cur]:
-                    in_count[pre] -= 1
-                    if in_count[pre] == 0:
-                        queue.append(pre)
-            if numCourses == 0:
-                return True
-            else:
-                return False
-
-        def dfs(flags, pres, i):
-            # 从第i个课程开始，检查是否有环
-            if flags[i] == -1: return True
-            if flags[i] == 1: return False
-            flags[i] = 1
-            for j in pres[i]:
-                # flags[j] = 1
-                if not dfs(flags, pres, j): return False
-            flags[i] = -1
+    def canFinish(self, numCourses: int, prerequisites: [[int]]):
+        if not prerequisites:
             return True
 
+        visited = [0] * numCourses
+        graph = [set() for _ in range(numCourses)]
 
-        pres = [[] for _ in range(numCourses)]
-        in_count = [0] * numCourses
+        for first, second in prerequisites:
+            graph[first].add(second)
 
-        for (i, j) in prerequisites:
-            pres[i].append(j)
-            in_count[j] += 1
+        res = []
 
-        flags = [0] * numCourses
+        def dfs(i):
+            if visited[i] == 2: return False
+            if visited[i] == 1: return True
 
-        bfs(numCourses, pres, in_count)
+            visited[i] = 2
+            for nxt in graph[i]:
+                if not dfs(nxt):
+                    return False
+            visited[i] = 1
+
+            # 从i开始学，如果没有循环
+            res.append(i)
+            return True
+
         for i in range(numCourses):
-            if not dfs(flags, pres, i):
-                # print("dfs no")
-                return False
-        return True
+            if not dfs(i):
+                return []
+        return res
 
 
-
-if __name__ == "__main__":
-    numCourses = 4
-    prerequisites = [[0, 1], [1, 3], [2, 3]]
-    s = Solution()
-    s.canFinish(numCourses, prerequisites)
+s = Solution()
+numCourses = 4
+prerequisites = [[1, 0], [2, 0], [3, 1], [3, 2]]
+print(s.canFinish(numCourses, prerequisites))

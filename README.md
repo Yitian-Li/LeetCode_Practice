@@ -376,6 +376,9 @@ def backtrack(路径, 选择列表):
   * [num86](https://leetcode-cn.com/problems/partition-list/submissions/)
 		中等难度题，感觉较为简单。用两个链表分别存小于和大于的结点，再合并就行。
 		
+  * [num138](https://leetcode-cn.com/problems/copy-list-with-random-pointer/submissions/)
+        链表的深拷贝，重点在于如何处理random成环的问题。
+		
   * [num206](https://leetcode-cn.com/problems/reverse-linked-list/)
 		反转链表除了头插法，还可以用双指针，
 

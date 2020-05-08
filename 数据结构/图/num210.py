@@ -3,36 +3,35 @@ class Solution:
         if not prerequisites:
             return [i for i in range(numCourses)]
 
-        adj_list = [set() for _ in range(numCourses)]
         visited = [0] * numCourses
+        graph = [set() for _ in range(numCourses)]
 
-        for cur, pre in prerequisites:
-            adj_list[cur].add(pre) 
-
-        def dfs(i):
-            if visited[i] == 2:
-                return True
-            if visited[i] == 1:
-                return False
-
-            visited[i] = 2
-
-            for p in adj_list[i]:
-                if dfs(p): return True
-            
-            visited[i] = 1
-            res.append(i)
-            
-            return False
+        for first, second in prerequisites:
+            graph[first].add(second)
 
         res = []
+
+        def dfs(i):
+            if visited[i] == 2: return False
+            if visited[i] == 1: return True
+
+            visited[i] = 2
+            for nxt in graph[i]:
+                if not dfs(nxt):
+                    return False
+            visited[i] = 1
+
+            # 从i开始学，如果没有循环，则依次添加nth....3rd，2nd，1st
+            res.append(i)
+            return True
+
         for i in range(numCourses):
-                if dfs(i):
-                    return []
-        
+            if not dfs(i):
+                return []
         return res
 
-class Solution:
+
+class Solution2:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         if not prerequisites:
             return [i for i in range(numCourses)]
