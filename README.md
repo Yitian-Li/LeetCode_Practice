@@ -213,6 +213,9 @@
 		简单题，但是并不顺利。此题的解题要点是：将数组分为三个和相等的部分其实就是每个部分为sum/3。除此之外，
 		写的代码不够简洁，还多次出现异常，判断语句的条件还需要多琢磨。
 
+* [num1402](https://leetcode-cn.com/problems/reducing-dishes/)
+        其实就是选择一个子序列，使得a1+2A2+3A3+......+n*An最大，
+        故很容易想到最后的位置放最大的数。
 		
 #### 双指针
 		
@@ -267,6 +270,9 @@ def backtrack(路径, 选择列表):
   * [num47](https://leetcode-cn.com/problems/permutations-ii/)
 		两道，回溯法求全排列。
 		
+  * [num52](https://leetcode-cn.com/problems/n-queens-ii/)
+        N皇后问题，回溯算法解决，只需注意对角线的特殊性，即i-j==常数 和i+j==常数
+		
   * [num77](https://leetcode-cn.com/problems/combinations/submissions/)
 		回溯求组合，注意因为是组合，所以可以剪枝。
 
@@ -292,6 +298,9 @@ def backtrack(路径, 选择列表):
 		
   * [num130](https://leetcode-cn.com/problems/surrounded-regions/)
 		连通岛屿问题。
+		
+  * [num145](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
+        二叉树后序遍历--迭代法
 		
   * [num200](https://leetcode-cn.com/problems/number-of-islands/)
 		看了题解后，发现我的思路比较类似于并查集？然而判断条件还是设置的不对。
