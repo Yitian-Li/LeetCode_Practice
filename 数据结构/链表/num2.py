@@ -1,28 +1,51 @@
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
-class Solution:
-    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        p1, p2 = l1, l2
-        val1, val2, cnt = 0, 0, 0
-        while p1:
-            val1 += p1.val * (10**cnt)
-            p1, cnt = p1.next, cnt+1
-        cnt = 0
-        while p2:
-            val2 += p2.val * (10**cnt)
-            p2, cnt = p2.next, cnt+1
-        res = val1 + val2
-        if res == 0:
-            return ListNode(0)
 
-        p = voidhead = ListNode(None)
-        while res:
-            insert = ListNode(res % 10)
-            p.next = insert
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        p, q = l1, l2
+        carry, cur = 0, 0
+        head = ListNode(0)
+        res = head
+
+        while p and q:
+            cur = p.val + q.val + carry
+            if cur >= 10:
+                carry = 1
+                cur -= 10
+            else:
+                carry = 0
+            new_node = ListNode(cur)
+            res.next = new_node
+            res = res.next
             p = p.next
-            res = res // 10
-        return voidhead.next
+            q = q.next
+
+        t = p if p else q
+
+        while t:
+            cur = t.val + carry
+            if cur >= 10:
+                carry = 1
+                cur -= 10
+            else:
+                carry = 0
+            new_node = ListNode(cur)
+            res.next = new_node
+            res = res.next
+            t = t.next
+
+        if carry == 1:
+            new_node = ListNode(carry)
+            res.next = new_node
+
+        return head.next

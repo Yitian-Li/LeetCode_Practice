@@ -4,19 +4,18 @@ class Solution:
             return 0
 
         left, right, size, ans = 0, 0, len(s), 0
-        d = {}
+        cur_s = dict()
 
-        while right < size:
-            # 没有重复继续扩大
-            if s[right] not in d:
-                d[s[right]] = right
-                right += 1
-                ans = max(ans, right - left)
-
-            # 重复了就去掉重复
+        while size > right >= left:
+            if s[right] in cur_s:
+                cur_s.pop(s[left])
+                left += 1
             else:
-                tmp = d[s[right]] + 1
-                for i in range(left, d[s[right]] + 1):
-                    d.pop(s[i])
-                left = tmp
+                cur_s[s[right]] = 1
+                right += 1
+            ans = max(ans, right - left)
+
         return ans
+
+s = Solution()
+print(s.lengthOfLongestSubstring("abcabcbb"))
